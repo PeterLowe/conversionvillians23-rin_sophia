@@ -5,6 +5,7 @@
 
 char printMenu(); // function declaration
 void degreesToRadians();
+void stoneLbsToKilograms();
 void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
 
 
@@ -17,6 +18,11 @@ int main()
 	if (userChoice == 'A')
 	{
 		degreesToRadians();
+	}
+
+	if (userChoice == 'e')
+	{
+		stoneLbsToKilograms();
 	}
 
 	if (userChoice == 'f')
@@ -61,7 +67,26 @@ void degreesToRadians()
 	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
 }
 
-void fahrenheitToCelsius()
+void stoneLbsToKilograms() // written by Sophia
+{
+	float stone = 0; // the number of stone that the user will input
+	float pounds = 0; // the number of pounds that the user will input 
+	float totalPounds = 0; // pounds after adding the stone to pounds
+	const float KG_CALC = 0.453; // for calculating lbs to kg
+	float kg = 0; // the kilograms that will be calculated
+
+	std::cout << "Enter the weight in stone: ";
+	std::cin >> stone;
+	std::cout << "Enter the pounds: ";
+	std::cin >> pounds;
+
+	totalPounds = (stone * 14) + pounds;
+	kg = totalPounds * KG_CALC;
+
+	std::cout << stone << " stone and " << pounds << " lbs is " << kg << " Kilograms." << std::endl;
+}
+
+void fahrenheitToCelsius() // written by Sophia
 {
 	float fahrenheit = 0; // the fahrenheit value that the user will input
 	float celsius = 0; // the celsius temperature that will be calculated

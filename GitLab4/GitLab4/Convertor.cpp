@@ -4,6 +4,7 @@
 #include <iostream>
 
 char printMenu(); // function declaration
+void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
 
 int main()
 {	
@@ -11,6 +12,10 @@ int main()
 	char userChoice = ' ';
 
 	userChoice = printMenu(); // function call
+	if (userChoice == 'f')
+	{
+		fahrenheitToCelsius();
+	}
 
 	return 0;
 }
@@ -33,4 +38,17 @@ char printMenu() // Written by Rin and Sophia
 	std::cout << "Enter your choice: ";
 	std::cin >> choice;
 	return choice;
+}
+
+void fahrenheitToCelsius()
+{
+	float fahrenheit = 0; // the fahrenheit value that the user will input
+	float celsius = 0; // the celsius temperature that will be calculated
+
+	std::cout << "Enter the temperature in Fahrenheit: ";
+	std::cin >> fahrenheit;
+
+	celsius = (fahrenheit - 32) * 5.0 / 9;
+
+	std::cout << fahrenheit << " degrees fahrenheit is " << celsius << " degrees celsius." << std::endl;
 }

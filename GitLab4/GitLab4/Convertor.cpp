@@ -7,12 +7,12 @@
 char printMenu(); 
 void degreesToRadians();
 void centimetresToInches();
+void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
 
 int main()
 {	
 	//Declare Variables
 	char userChoice = ' ';
-
 	userChoice = printMenu(); // function call
 
 	if (userChoice == 'A')
@@ -23,6 +23,11 @@ int main()
 	if (userChoice == 'B')
 	{
 		centimetresToInches();
+	}
+
+	if (userChoice == 'f')
+	{
+		fahrenheitToCelsius();
 	}
 
 	return 0;
@@ -48,7 +53,7 @@ char printMenu() // Written by Rin and Sophia
 	return choice;
 }
 
-void degreesToRadians()
+void degreesToRadians() // Written by Rin
 {
 	// Declare Variables
 	float degrees = 0;
@@ -61,8 +66,8 @@ void degreesToRadians()
 
 	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
 }
-
-void centimetresToInches()
+ 
+void centimetresToInches() // Written by Rin
 {
 	//Declare Variables
 	float centimetres = 0;
@@ -74,4 +79,17 @@ void centimetresToInches()
 	inches = centimetres * 0.3937; // formula to convert centimetres to inches
 
 	std::cout << centimetres << " cm = " << inches << " inches" << std::endl;
+}
+
+void fahrenheitToCelsius()
+{
+	float fahrenheit = 0; // the fahrenheit value that the user will input
+	float celsius = 0; // the celsius temperature that will be calculated
+
+	std::cout << "Enter the temperature in Fahrenheit: ";
+	std::cin >> fahrenheit;
+
+	celsius = (fahrenheit - 32) * 5.0 / 9;
+
+	std::cout << fahrenheit << " degrees fahrenheit is " << celsius << " degrees celsius." << std::endl;
 }

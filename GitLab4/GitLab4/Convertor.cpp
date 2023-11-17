@@ -8,7 +8,8 @@ char printMenu();
 void degreesToRadians();
 void centimetresToFeetAndInches();
 void litresToGallons();
-void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
+void stoneLbsToKilograms();
+void fahrenheitToCelsius();
 
 int main()
 {	
@@ -20,7 +21,6 @@ int main()
 	{
 		degreesToRadians();
 	}
-
 	if (userChoice == 'B')
 	{
 		centimetresToFeetAndInches();
@@ -31,6 +31,11 @@ int main()
 		litresToGallons();
 	}
 
+	if (userChoice == 'e')
+	{
+		stoneLbsToKilograms();
+
+	}
 	if (userChoice == 'f')
 	{
 		fahrenheitToCelsius();
@@ -39,7 +44,7 @@ int main()
 	return 0;
 }
 
-char printMenu() // Written by Rin and Sophia
+char printMenu() // Written by Rin (A - F) and Sophia (a - f)
 {
 	// Declare Variables
 	char choice = ' ';
@@ -103,7 +108,26 @@ void litresToGallons() // Written by Rin
 	std::cout << litres << " litres = " << gallons << " imperial gallons" << std::endl;
 }
 
-void fahrenheitToCelsius()
+void stoneLbsToKilograms() // written by Sophia
+{
+	float stone = 0; // the number of stone that the user will input
+	float pounds = 0; // the number of pounds that the user will input 
+	float totalPounds = 0; // pounds after adding the stone to pounds
+	const float KG_CALC = 0.453; // for calculating lbs to kg
+	float kg = 0; // the kilograms that will be calculated
+
+	std::cout << "Enter the weight in stone: ";
+	std::cin >> stone;
+	std::cout << "Enter the pounds: ";
+	std::cin >> pounds;
+
+	totalPounds = (stone * 14) + pounds;
+	kg = totalPounds * KG_CALC;
+
+	std::cout << stone << " stone and " << pounds << " lbs is " << kg << " Kilograms." << std::endl;
+}
+
+void fahrenheitToCelsius() // written by Sophia
 {
 	float fahrenheit = 0; // the fahrenheit value that the user will input
 	float celsius = 0; // the celsius temperature that will be calculated

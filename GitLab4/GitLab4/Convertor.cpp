@@ -3,8 +3,10 @@
 
 #include <iostream>
 
-char printMenu(); // function declaration
+// Function Declarations
+char printMenu(); 
 void degreesToRadians();
+void centimetresToInches();
 
 int main()
 {	
@@ -16,6 +18,11 @@ int main()
 	if (userChoice == 'A')
 	{
 		degreesToRadians();
+	}
+
+	if (userChoice == 'B')
+	{
+		centimetresToInches();
 	}
 
 	return 0;
@@ -53,4 +60,18 @@ void degreesToRadians()
 	radians = degrees * (3.14 / 180); // formula to convert degrees to radians (multiply by pi over 180)
 
 	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
+}
+
+void centimetresToInches()
+{
+	//Declare Variables
+	float centimetres = 0;
+	float inches = 0;
+
+	std::cout << "Input Value in Centimetres" << std::endl;
+	std::cin >> centimetres;
+
+	inches = centimetres * 0.3937; // formula to convert centimetres to inches
+
+	std::cout << centimetres << " cm = " << inches << " inches" << std::endl;
 }

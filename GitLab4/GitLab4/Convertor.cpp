@@ -7,6 +7,7 @@
 char printMenu(); 
 void degreesToRadians();
 void centimetresToInches();
+void lKmToMpg();
 void stoneLbsToKilograms();
 void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
 
@@ -23,6 +24,10 @@ int main()
 	if (userChoice == 'B')
 	{
 		centimetresToInches();
+	}
+	if (userChoice == 'd')
+	{
+		lKmToMpg();
 	}
 
 	if (userChoice == 'e')
@@ -85,7 +90,20 @@ void centimetresToInches() // Written by Rin
 
 	std::cout << centimetres << " cm = " << inches << " inches" << std::endl;
 }
+void lKmToMpg() // written by Sophia
+{
+	float litres = 0;
+	float milesPerGallon = 0;
+	const float MPG = 282.48; // for calculating the mpg
 
+	std::cout << "Input amount of fuel consumed in litres per 100 km: ";
+	std::cin >> litres;
+
+	milesPerGallon = MPG / litres;
+
+	std::cout << litres << " litres per 100 KM is " << milesPerGallon << " in MPG." << std::endl;
+
+}
 void stoneLbsToKilograms() // written by Sophia
 {
 	float stone = 0; // the number of stone that the user will input

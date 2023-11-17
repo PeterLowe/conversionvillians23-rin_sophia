@@ -4,6 +4,7 @@
 #include <iostream>
 
 char printMenu(); // function declaration
+void degreesToRadians();
 
 int main()
 {	
@@ -11,6 +12,11 @@ int main()
 	char userChoice = ' ';
 
 	userChoice = printMenu(); // function call
+
+	if (userChoice == 'A')
+	{
+		degreesToRadians();
+	}
 
 	return 0;
 }
@@ -33,4 +39,18 @@ char printMenu() // Written by Rin and Sophia
 	std::cout << "Enter your choice: ";
 	std::cin >> choice;
 	return choice;
+}
+
+void degreesToRadians()
+{
+	// Declare Variables
+	float degrees = 0;
+	float radians = 0;
+
+	std::cout << "Input Value in Degrees" << std::endl;
+	std::cin >> degrees;
+
+	radians = degrees * (3.14 / 180); // formula to convert degrees to radians (multiply by pi over 180)
+
+	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
 }

@@ -3,11 +3,12 @@
 
 #include <iostream>
 
-char printMenu(); // function declaration
+// Function Declarations
+char printMenu(); 
 void degreesToRadians();
+void centimetresToInches();
 void stoneLbsToKilograms();
 void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
-
 
 int main()
 {	
@@ -19,12 +20,16 @@ int main()
 	{
 		degreesToRadians();
 	}
+	if (userChoice == 'B')
+	{
+		centimetresToInches();
+	}
 
 	if (userChoice == 'e')
 	{
 		stoneLbsToKilograms();
-	}
 
+	}
 	if (userChoice == 'f')
 	{
 		fahrenheitToCelsius();
@@ -53,7 +58,7 @@ char printMenu() // Written by Rin and Sophia
 	return choice;
 }
 
-void degreesToRadians()
+void degreesToRadians() // Written by Rin
 {
 	// Declare Variables
 	float degrees = 0;
@@ -65,6 +70,20 @@ void degreesToRadians()
 	radians = degrees * (3.14 / 180); // formula to convert degrees to radians (multiply by pi over 180)
 
 	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
+}
+ 
+void centimetresToInches() // Written by Rin
+{
+	//Declare Variables
+	float centimetres = 0;
+	float inches = 0;
+
+	std::cout << "Input Value in Centimetres" << std::endl;
+	std::cin >> centimetres;
+
+	inches = centimetres * 0.3937; // formula to convert centimetres to inches
+
+	std::cout << centimetres << " cm = " << inches << " inches" << std::endl;
 }
 
 void stoneLbsToKilograms() // written by Sophia

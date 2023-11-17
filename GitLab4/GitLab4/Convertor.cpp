@@ -9,6 +9,7 @@ void degreesToRadians();
 void centimetresToFeetAndInches();
 void lKmToMpg();
 void litresToGallons();
+void gallonsToLitres();
 void stoneLbsToKilograms();
 void fahrenheitToCelsius();
 
@@ -26,20 +27,21 @@ int main()
 	{
 		centimetresToFeetAndInches();
 	}
-
 	if (userChoice == 'C')
 	{
 		litresToGallons();
+	}
+	if (userChoice == 'c')
+	{
+		gallonsToLitres();
 	}
 	if (userChoice == 'd')
 	{
 		lKmToMpg();
 	}
-
 	if (userChoice == 'e')
 	{
 		stoneLbsToKilograms();
-
 	}
 	if (userChoice == 'f')
 	{
@@ -111,6 +113,21 @@ void litresToGallons() // Written by Rin
 	gallons = litres * 0.21997; // formula to convert litres to imperial gallons
 
 	std::cout << litres << " litres = " << gallons << " imperial gallons" << std::endl;
+}
+
+void gallonsToLitres() // written by Sophia
+{
+	float gallons = 0;
+	float litres = 0;
+	const float LITRE_CALC = 4.54609;
+
+	std::cout << "Enter the value in gallons: ";
+	std::cin >> gallons;
+
+	litres = gallons * LITRE_CALC;
+
+	std::cout << gallons << " gallons is " << litres << " litres." << std::endl;
+
 }
 void lKmToMpg() // written by Sophia
 {

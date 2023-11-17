@@ -7,6 +7,7 @@
 char printMenu(); 
 void degreesToRadians();
 void centimetresToFeetAndInches();
+void mpgToLkm();
 void lKmToMpg();
 void litresToGallons();
 void stoneLbsToKilograms();
@@ -31,6 +32,12 @@ int main()
 	{
 		litresToGallons();
 	}
+
+	if (userChoice == 'D')
+	{
+		mpgToLkm();
+	}
+
 	if (userChoice == 'd')
 	{
 		lKmToMpg();
@@ -112,6 +119,20 @@ void litresToGallons() // Written by Rin
 
 	std::cout << litres << " litres = " << gallons << " imperial gallons" << std::endl;
 }
+
+void mpgToLkm()
+{
+	float milesPerGallon = 0;
+	float litresPer100Km = 0;
+
+	std::cout << "Input Value in Miles Per Gallon" << std::endl;
+	std::cin >> milesPerGallon;
+
+	litresPer100Km = 282.481053 / milesPerGallon; // formula to convert mpg to l/100km
+
+	std::cout << milesPerGallon << " mpg is " << litresPer100Km << " l/100km" << std::endl;
+}
+
 void lKmToMpg() // written by Sophia
 {
 	float litres = 0;
@@ -126,6 +147,7 @@ void lKmToMpg() // written by Sophia
 	std::cout << litres << " litres per 100 KM is " << milesPerGallon << " in MPG." << std::endl;
 
 }
+
 void stoneLbsToKilograms() // written by Sophia
 {
 	float stone = 0; // the number of stone that the user will input

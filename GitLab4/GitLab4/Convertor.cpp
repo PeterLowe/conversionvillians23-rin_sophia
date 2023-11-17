@@ -6,10 +6,11 @@
 // Function Declarations
 char printMenu(); 
 void degreesToRadians();
-void centimetresToInches();
+void centimetresToFeetAndInches();
 void lKmToMpg();
+void litresToGallons();
 void stoneLbsToKilograms();
-void fahrenheitToCelsius(); // fahrenheit to celsius function declaration
+void fahrenheitToCelsius();
 
 int main()
 {	
@@ -23,7 +24,12 @@ int main()
 	}
 	if (userChoice == 'B')
 	{
-		centimetresToInches();
+		centimetresToFeetAndInches();
+	}
+
+	if (userChoice == 'C')
+	{
+		litresToGallons();
 	}
 	if (userChoice == 'd')
 	{
@@ -43,7 +49,7 @@ int main()
 	return 0;
 }
 
-char printMenu() // Written by Rin and Sophia
+char printMenu() // Written by Rin (A - F) and Sophia (a - f)
 {
 	// Declare Variables
 	char choice = ' ';
@@ -77,18 +83,34 @@ void degreesToRadians() // Written by Rin
 	std::cout << degrees << " Degrees = " << radians << " Radians" << std::endl;
 }
  
-void centimetresToInches() // Written by Rin
+void centimetresToFeetAndInches() // Written by Rin
 {
-	//Declare Variables
+	// Declare Variables
 	float centimetres = 0;
 	float inches = 0;
+	int feet = 0;
 
 	std::cout << "Input Value in Centimetres" << std::endl;
 	std::cin >> centimetres;
 
 	inches = centimetres * 0.3937; // formula to convert centimetres to inches
+	feet = inches / 12; // formula to convert inches to feet
 
-	std::cout << centimetres << " cm = " << inches << " inches" << std::endl;
+	std::cout << centimetres << " cm = " << feet << " feet and " << inches << " inches" << std::endl;
+}
+
+void litresToGallons() // Written by Rin
+{
+	// Declare Variables
+	float litres = 0;
+	float gallons = 0;
+
+	std::cout << "Input Value in Litres" << std::endl;
+	std::cin >> litres;
+
+	gallons = litres * 0.21997; // formula to convert litres to imperial gallons
+
+	std::cout << litres << " litres = " << gallons << " imperial gallons" << std::endl;
 }
 void lKmToMpg() // written by Sophia
 {
